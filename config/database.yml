@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: timetable_development
+
+test:
+  adapter: postgresql
+  database: timetable_test
