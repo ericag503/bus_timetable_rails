@@ -1,0 +1,8 @@
+<h1><%=  "Line:\n\n" + @stop.line.name + "\n-\n" +
+    "Station:\n\n" + @stop.station.name %></h1>
+
+<p><%= link_to "Edit", edit_stop_path(@stop), :class => "btn btn-info" %></p>
+<p><%= link_to "Delete", stop_path(@stop),
+                          :data => {:confirm => "You suuurreeeee?",
+                          :method => "delete"},
+                          :class => "btn btn-danger" %></p>

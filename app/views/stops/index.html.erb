@@ -1,0 +1,10 @@
+<h1> Bus Stops </h1>
+
+<p>Click a stop to edit the line or station</p>
+<ul>
+  <% @stops.each do |stop| %>
+    <li><a href="stops/<%= stop.id %>"><%= stop.station.name + "\n\n\n|\n\n\n" + stop.line.name %></a></li>
+   <% end %>
+</ul>
+
+<%= link_to "Add Stop", new_stop_path, :class => "btn btn-default" %>
