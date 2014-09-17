@@ -5,6 +5,9 @@
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.collection_check_boxes :line_ids, Line.all, :id, :name %>
   </div>
   <%= f.submit(:class => "btn btn-primary") %>
 <% end %>
+
+

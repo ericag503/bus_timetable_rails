@@ -9,6 +9,7 @@ class StopsController < ApplicationController
   end
 
   def show
+    @stops = Stop.all
     @line = Line.new
     @station = Station.new
     @stop = Stop.find(params[:id])

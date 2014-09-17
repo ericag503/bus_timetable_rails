@@ -1,6 +1,7 @@
 class LinesController < ApplicationController
 
   def index
+    @line = Line.new
     @lines = Line.all
   end
 
@@ -19,6 +20,8 @@ class LinesController < ApplicationController
   end
 
   def show
+    @station = Station.new
+    @stops = Stop.all
     @line = Line.find(params[:id])
   end
 
@@ -29,7 +32,7 @@ class LinesController < ApplicationController
   def update
     @line = Line.find(params[:id])
     if @line.update(params_line)
-      flash[:notice] = "Station has been updated."
+      flash[:notice] = "Line has been updated."
       redirect_to lines_path
     else
       render 'edit'
@@ -46,7 +49,7 @@ class LinesController < ApplicationController
 
 private
   def params_line
-    params.require(:line).permit(:name)
+    params.require(:line).permit(:name, station_ids:[])
   end
 end
 

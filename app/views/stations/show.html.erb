@@ -1,7 +1,19 @@
 <h1><%= @station.name %></h1>
 
+<h3> Lines: </h3>
+<ul>
+  <% @stops.each do |stop| %>
+    <% if stop.station_id == @station.id %>
+    <li><%= stop.line.name %></li>
+    <% end %>
+  <% end %>
+
+
 <p><%= link_to "Edit", edit_station_path(@station), :class => "btn btn-info" %></p>
 <p><%= link_to "Delete", station_path(@station),
                           :data => {:confirm => "You suuurreeeee?",
                           :method => "delete"},
                           :class => "btn btn-danger" %></p>
+<%= link_to "Lines Menu", lines_path, :class => "btn btn-default" %>
+
+<%= link_to "Stops Menu", stops_path, :class => "btn btn-default" %>

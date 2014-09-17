@@ -10,6 +10,7 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.find(params[:id])
+    @stops = Stop.all
   end
 
   def create
@@ -45,7 +46,7 @@ class StationsController < ApplicationController
 
   private
   def params_station
-    params.require(:station).permit(:name)
+    params.require(:station).permit(:name, line_ids:[])
   end
 
 end
