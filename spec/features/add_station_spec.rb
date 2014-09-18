@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 
-describe "add a station" do
-  it "adds a station to the stations table" do
+describe 'add a station' do
+  it 'adds a station to the stations table' do
   visit '/stations/new'
   station = Station.create(:name => 'yourmom')
   fill_in 'Name' , :with => "yourmom"
